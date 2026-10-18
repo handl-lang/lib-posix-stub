@@ -1,0 +1,2 @@
+-- lib-os-stub: package manifest.
+{ modules: ["os-stub"] }
