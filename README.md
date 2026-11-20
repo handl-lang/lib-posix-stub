@@ -1,8 +1,20 @@
 # lib-os-stub
 
-os: stub backend — Handl stdlib port
+Stub backend for the `os` ports.
 
-Part of the `handl-lang` org split (ADR-0128); moved from `kit-canonical/handl-packages/os-stub/`.
+## Layout
+
+```text
+src/             the .hnl sources (path.hnl, env.hnl, time.hnl + tests)
+pkg.hnl          package manifest — modules, deps, description, license
+ci.sh            bupha entry → scripts/hnl-gate.sh
+```
+
+## Gate
+
+```bash
+HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh
+```
 
 ## License
 

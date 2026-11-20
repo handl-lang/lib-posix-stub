@@ -1,2 +1,2 @@
 -- lib-os-stub: package manifest.
-{ modules: ["os-stub"] }
+{ modules: ["os-stub"], description: "Stub backend for the os ports.", license: "MIT" }
