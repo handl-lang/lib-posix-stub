@@ -1,12 +1,12 @@
-# bupha.toml — committed CI manifest for handl-lang/lib-os-stub.
+# bupha.toml — committed CI manifest for handl-lang/lib-posix-stub.
 #
 # Runner is this repo's ci.sh (scripts/hnl-gate.sh: typecheck + lint + test over
 # the package's .hnl sources). Merge the [[repos]] entry into the shared watcher
 # (~/.config/bupha/bupha.toml) or run: bupha watch --config bupha.toml
 
 [[repos]]
-name = "handl-lang/lib-os-stub"
-dir = "/home/luis/GitHub/handl-lang/lib-os-stub"
+name = "handl-lang/lib-posix-stub"
+dir = "/home/luis/GitHub/handl-lang/lib-posix-stub"
 branch = "refs/heads/main"
   [repos.runner]
   kind = "script"

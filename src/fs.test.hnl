@@ -1,0 +1,36 @@
+from "./fs" import * as fs
+
+res_tag :: r ~> match r { ok(_): "ok", err(_): "err", _: "?" }
+
+test_stub_fs_exists :: assert fs.exists("/tmp") = false
+
+test_stub_fs_is_dir :: assert fs.is_dir("/tmp") = false
+
+test_stub_fs_is_file :: assert fs.is_file("/tmp") = false
+
+test_stub_fs_read_file_raises :: assert res_tag(
+  error.try((x) ~> fs.read_file("/tmp/x"))) = "err"
+
+test_stub_fs_write_file_raises :: assert res_tag(
+  error.try((x) ~> fs.write_file("/tmp/x", "data"))) = "err"
+
+test_stub_fs_list_dir_raises :: assert res_tag(
+  error.try((x) ~> fs.list_dir("/tmp"))) = "err"
+
+test_stub_fs_stat_raises :: assert res_tag(
+  error.try((x) ~> fs.stat("/tmp/x"))) = "err"
+
+test_stub_fs_lstat_raises :: assert res_tag(
+  error.try((x) ~> fs.lstat("/tmp/x"))) = "err"
+
+test_stub_fs_remove_raises :: assert res_tag(
+  error.try((x) ~> fs.remove("/tmp/x"))) = "err"
+
+test_stub_fs_rmdir_raises :: assert res_tag(
+  error.try((x) ~> fs.rmdir("/tmp/x"))) = "err"
+
+test_stub_fs_rename_raises :: assert res_tag(
+  error.try((x) ~> fs.rename("/tmp/a", "/tmp/b"))) = "err"
+
+test_stub_fs_mkdir_raises :: assert res_tag(
+  error.try((x) ~> fs.mkdir("/tmp/x"))) = "err"

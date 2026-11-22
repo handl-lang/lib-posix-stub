@@ -1,7 +1,7 @@
 --- Deterministic, pure path manipulation stubs.
 ---
 --- @details
---- These use the same pure string logic as `os-c/path` so tests can
+--- These use the same pure string logic as `posix-c/path` so tests can
 --- validate the contract without touching the filesystem.
 
 from "str" import * as str

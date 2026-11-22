@@ -1,9 +1,10 @@
---- os-stub -- deterministic stub backend for the `os` ports: path, env
---- and time.
+--- posix-stub -- deterministic stub backend for the `os` and `fs`
+--- ports: path, env, time and filesystem.
 ---
---- The package's single `os-stub` module aggregates the three port
---- implementations (`path.hnl`, `env.hnl`, `time.hnl`); each arrow is
---- re-exported here so the module record exposes the whole surface.
+--- The package's single `posix-stub` module aggregates the port
+--- implementations (`path.hnl`, `env.hnl`, `time.hnl`, `fs.hnl`); each
+--- arrow is re-exported here so the module record exposes the whole
+--- surface.
 
 from "./path" import join as __join
 export join := __join
@@ -23,3 +24,27 @@ from "./time" import now as __now
 export now := __now
 from "./time" import epoch as __epoch
 export epoch := __epoch
+from "./fs" import read_file as __read_file
+export read_file := __read_file
+from "./fs" import write_file as __write_file
+export write_file := __write_file
+from "./fs" import exists as __exists
+export exists := __exists
+from "./fs" import list_dir as __list_dir
+export list_dir := __list_dir
+from "./fs" import stat as __stat
+export stat := __stat
+from "./fs" import lstat as __lstat
+export lstat := __lstat
+from "./fs" import is_dir as __is_dir
+export is_dir := __is_dir
+from "./fs" import is_file as __is_file
+export is_file := __is_file
+from "./fs" import remove as __remove
+export remove := __remove
+from "./fs" import rmdir as __rmdir
+export rmdir := __rmdir
+from "./fs" import rename as __rename
+export rename := __rename
+from "./fs" import mkdir as __mkdir
+export mkdir := __mkdir

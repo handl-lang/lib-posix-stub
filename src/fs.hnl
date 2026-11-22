@@ -1,0 +1,55 @@
+--- Deterministic, no-effect filesystem stubs for tests and benchmarks.
+---
+--- @details
+--- Mirrors the `fs` surface of `posix-c` (absorbed from `lib-fs`).
+--- The stub world is empty and immutable: existence probes answer
+--- negatively (`exists`/`is_dir`/`is_file` -> `false`) and every
+--- operation that would need real storage — reads, stats, listings and
+--- all mutations — raises `posix-stub: <op>: stub backend` through
+--- `error.raise`, matching the `fs: <op>: <err>` convention of the
+--- real backend. `error` is a host module on the stdlib chain —
+--- reached by qualified call with no import line (the intl-c
+--- convention).
+
+fs_err := (what) ~> error.raise("posix-stub: " + what + ": stub backend")
+
+--- Read a whole file as Bytes. Always raises — the stub world has no
+--- files to read.
+export read_file := (path) ~> fs_err("read_file(" + path + ")")
+
+--- Write `data` (String or Bytes) to `path`. Always raises — the stub
+--- world is immutable.
+export write_file := (path, _data) ~> fs_err("write_file(" + path + ")")
+
+--- Always returns false — the stub world contains nothing.
+export exists := (_path) ~> false
+
+--- List the names in directory `path`. Always raises — there is no
+--- directory to list.
+export list_dir := (path) ~> fs_err("list_dir(" + path + ")")
+
+--- stat(2) record for `path`. Always raises — no such file.
+export stat := (path) ~> fs_err("stat(" + path + ")")
+
+--- lstat(2) record for `path`. Always raises — no such file.
+export lstat := (path) ~> fs_err("lstat(" + path + ")")
+
+--- Always returns false (a missing path is neither, like the real
+--- backend's stat-failure-reads-as-false convention).
+export is_dir := (_path) ~> false
+
+--- Always returns false.
+export is_file := (_path) ~> false
+
+--- unlink(2) — remove a file. Always raises — nothing to remove.
+export remove := (path) ~> fs_err("remove(" + path + ")")
+
+--- rmdir(2) — remove an empty directory. Always raises.
+export rmdir := (path) ~> fs_err("rmdir(" + path + ")")
+
+--- rename(2) — move/rename `old` to `new`. Always raises.
+export rename := (src, dst) ~> fs_err("rename(" + src + " -> " + dst + ")")
+
+--- mkdir(2) — create a single directory level. Always raises — the
+--- stub world cannot be mutated.
+export mkdir := (path) ~> fs_err("mkdir(" + path + ")")

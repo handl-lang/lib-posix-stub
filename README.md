@@ -1,11 +1,11 @@
-# lib-os-stub
+# lib-posix-stub
 
-Stub backend for the `os` ports.
+Stub backend for the `posix` ports (path, env, time, fs).
 
 ## Layout
 
 ```text
-src/             the .hnl sources (path.hnl, env.hnl, time.hnl + tests)
+src/             the .hnl sources (path.hnl, env.hnl, time.hnl, fs.hnl + tests)
 pkg.hnl          package manifest — modules, deps, description, license
 ci.sh            bupha entry → scripts/hnl-gate.sh
 ```
