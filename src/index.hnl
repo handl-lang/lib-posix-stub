@@ -1,0 +1,25 @@
+--- os-stub -- deterministic stub backend for the `os` ports: path, env
+--- and time.
+---
+--- The package's single `os-stub` module aggregates the three port
+--- implementations (`path.hnl`, `env.hnl`, `time.hnl`); each arrow is
+--- re-exported here so the module record exposes the whole surface.
+
+from "./path" import join as __join
+export join := __join
+from "./path" import resolve as __resolve
+export resolve := __resolve
+from "./path" import basename as __basename
+export basename := __basename
+from "./path" import dirname as __dirname
+export dirname := __dirname
+from "./path" import extname as __extname
+export extname := __extname
+from "./env" import get as __get
+export get := __get
+from "./env" import has as __has
+export has := __has
+from "./time" import now as __now
+export now := __now
+from "./time" import epoch as __epoch
+export epoch := __epoch
