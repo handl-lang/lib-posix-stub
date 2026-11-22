@@ -2,4 +2,10 @@ from "./time" import * as time
 
 test_stub_time_now :: assert time.now() = 0
 
+test_stub_time_now_ms :: assert time.now_ms() = 0
+
+test_stub_time_instant_ns :: assert time.instant_ns() = 0
+
+test_stub_time_elapsed_ns :: assert time.elapsed_ns(0) = 0
+
 test_stub_time_epoch :: assert time.epoch() = 0

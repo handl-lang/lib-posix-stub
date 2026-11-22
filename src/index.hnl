@@ -20,10 +20,16 @@ from "./env" import get as __get
 export get := __get
 from "./env" import has as __has
 export has := __has
-from "./time" import now as __now
-export now := __now
+from "./time" import now_ms as __now_ms
+export now_ms := __now_ms
+from "./time" import instant_ns as __instant_ns
+export instant_ns := __instant_ns
+from "./time" import elapsed_ns as __elapsed_ns
+export elapsed_ns := __elapsed_ns
 from "./time" import epoch as __epoch
 export epoch := __epoch
+from "./time" import now as __now
+export now := __now
 from "./fs" import read_file as __read_file
 export read_file := __read_file
 from "./fs" import write_file as __write_file
