@@ -22,7 +22,7 @@ export read_file := (path) ~> fs_err("read_file(" + path + ")")
 export write_file := (path, _data) ~> fs_err("write_file(" + path + ")")
 
 --- Always returns false — the stub world contains nothing.
-export exists := (_path) ~> false
+export path_exists := (_path) ~> false
 
 --- List the names in directory `path`. Always raises — there is no
 --- directory to list.

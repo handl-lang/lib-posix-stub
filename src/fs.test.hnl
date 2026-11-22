@@ -2,7 +2,7 @@ from "./fs" import * as fs
 
 res_tag :: r ~> match r { ok(_): "ok", err(_): "err", _: "?" }
 
-test_stub_fs_exists :: assert fs.exists("/tmp") = false
+test_stub_fs_exists :: assert fs.path_exists("/tmp") = false
 
 test_stub_fs_is_dir :: assert fs.is_dir("/tmp") = false
 

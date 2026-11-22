@@ -34,8 +34,8 @@ from "./fs" import read_file as __read_file
 export read_file := __read_file
 from "./fs" import write_file as __write_file
 export write_file := __write_file
-from "./fs" import exists as __exists
-export exists := __exists
+from "./fs" import path_exists as path_exists_
+export path_exists := path_exists_
 from "./fs" import list_dir as __list_dir
 export list_dir := __list_dir
 from "./fs" import stat as __stat
