@@ -16,7 +16,7 @@ export resolve: (List(String)) ~> String := (parts) ~> str.join(parts, "/")
 
 --- Return the last component of a path.
 export basename: String ~> String := (p) ~> do {
-  i = str.rfind(p, "/");
+  i := str.rfind(p, "/");
   if i > -1 {
     str.slice(p, i + 1, str.length(p))
   } else {
@@ -26,7 +26,7 @@ export basename: String ~> String := (p) ~> do {
 
 --- Return the directory component of a path.
 export dirname: String ~> String := (p) ~> do {
-  i = str.rfind(p, "/");
+  i := str.rfind(p, "/");
   if i > -1 {
     str.slice(p, 0, i)
   } else {
@@ -36,8 +36,8 @@ export dirname: String ~> String := (p) ~> do {
 
 --- Return the file extension, including the leading dot, or the empty string.
 export extname: String ~> String := (p) ~> do {
-  base = basename(p);
-  i = str.rfind(base, ".");
+  base := basename(p);
+  i := str.rfind(base, ".");
   if i > -1 {
     str.slice(base, i, str.length(base))
   } else {
