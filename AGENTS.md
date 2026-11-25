@@ -1,3 +1,31 @@
+# lib-posix-stub
+
+Stub backend for the `posix` ports (path, env, time, fs) — the
+deterministic test implementation of the `lib-posix` contract.
+
+## Layout
+
+| path | role |
+| --- | --- |
+| `src/index.hnl` | module index |
+| `src/{path,env,time,fs}.hnl` + matching `*.test.hnl` | per-surface stub impls + tests |
+| `pkg.hnl`, `scripts/hnl-gate.sh`, `ci.sh` | manifest / gate / bupha entry |
+
+## Contract
+
+- Satisfies the `posix` contract (`lib-posix`) with stub behavior —
+  for tests and platforms without libc.
+
+## Verification
+
+```bash
+HNL=../host-cli/target/debug/hnl scripts/hnl-gate.sh
+```
+
+## License
+
+MIT.
+
 <!-- myco:agent-awareness -->
 
 ## Agent awareness
