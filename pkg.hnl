@@ -1,2 +1,2 @@
 -- lib-posix-stub: package manifest.
-{ modules: ["posix-stub"], description: "Stub backend for the POSIX ports (path, env, time, fs).", license: "MIT" }
+{ modules: ["posix-stub"], name: "posix-stub", description: "Stub backend for the POSIX ports (path, env, time, fs).", license: "MIT" }
