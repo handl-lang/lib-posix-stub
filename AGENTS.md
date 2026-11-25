@@ -9,7 +9,7 @@ deterministic test implementation of the `lib-posix` contract.
 | --- | --- |
 | `src/index.hnl` | module index |
 | `src/{path,env,time,fs}.hnl` + matching `*.test.hnl` | per-surface stub impls + tests |
-| `pkg.hnl`, `scripts/hnl-gate.sh`, `ci.sh` | manifest / gate / bupha entry |
+| `pkg.hnl`, `scripts/hnl-gate.sh`, `workflows/gate.yaml` | manifest / gate / bupha entry |
 
 ## Contract
 
