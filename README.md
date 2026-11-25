@@ -7,7 +7,7 @@ Stub backend for the `posix` ports (path, env, time, fs).
 ```text
 src/             the .hnl sources (path.hnl, env.hnl, time.hnl, fs.hnl + tests)
 pkg.hnl          package manifest — modules, deps, description, license
-ci.sh            bupha entry → scripts/hnl-gate.sh
+workflows/gate.yaml            bupha entry (handl-gates) → scripts/hnl-gate.sh
 ```
 
 ## Gate
